@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="v5/js/jcl-base.js"></script>
+<script src="v5/js/jcl.js"></script>
+<script src="v5/js/i18n/code.zh_CN.js"></script>
+<script src="v5/js/jcl-plugins.js"></script>
+<script src="v5/js/jcl-ui.js"></script>
+<script src="v5/js/ui/component/base/popup.js"></script>
+<script src="v5/js/ui/component/base/segment.js"></script>
+<script src="v5/js/ui/component/slide/slide.js"></script>
+<script src="v5/js/ui/component/tabset/tabset.js"></script>
+<script src="res/local.js"></script>
+<style>
+.c_list .pic .e_ico-pic-r{
+    margin:0;
+}
+</style>
+</head>
+
+<body>
+<!-- 标题栏 开始 -->
+<div class="c_header"><!-- 
+    <div class="right">
+        <div class="fn">
+            <button type="button" class="e_button-blue" ontap="parent.goto('../multi_sys/index.html')"><span class="e_ico-exit"></span><span>返回</span></button>
+        </div>
+    </div> -->
+    <div class="auto" style="padding:0 0.1rem">
+        <div class="input">
+            <span class="e_mix e_mix-r">
+				<input type="text" />
+				<span class="e_ico-search"></span>
+            </span>
+        </div>
+    </div>
+</div>
+<!-- 标题栏 结束 -->
+<!-- 标签页 开始 -->
+<div class="c_scroll c_scroll-float c_scroll-header">
+    <!-- 列表 开始 -->
+    <div class="c_list c_list-blue">
+        <ul>
+            <li class="l_padding-2">
+                <div class="pic"><img class="e_pic-r" src="res/imgs/staff-manager.jpg" alt="" /></div>
+                <div class="main">
+                    <div class="title">石常礼</div>
+                    <div class="content">JTKH0097</div>
+                </div>
+                <div class="side">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 列表 结束 -->
+    <!-- 参数 开始 -->
+    <div class="c_param c_param-avg c_param-v c_param-label-7">
+        <ul>
+            <li>
+                <span class="value">71</span>
+                <span class="e_size-s label">集团客户</span>
+            </li>
+            <li>
+                <span class="value">7358</span>
+                <span class="e_size-s label">集团成员统付收入</span>
+            </li>
+            <li>
+                <span class="value">1156</span>
+                <span class="e_size-s label">集团单位产品收入</span>
+            </li>
+        </ul>
+    </div>
+    <!-- 参数 结束 -->
+    <div class="c_line"></div>
+    <div class="c_space"></div>
+    <div class="c_line"></div>
+    <div class="c_box">
+        <!-- 标题 开始 -->
+        <div class="c_title">
+            <div class="text">常用功能</div>
+            <div class="fn">
+                <ul>
+                    <li><span class="e_ico-config"></span>管理</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 标题 结束 -->
+        <div class="c_list c_list-v c_list-col-4">
+            <ul class="l_padding l_padding-u">
+                <li class="link" ontap="openNav('page/prdChange.html')">
+                    <div class="pic">
+                        <span class="e_ico-change e_ico-pic-red e_ico-pic-r"></span>
+                    </div>
+                    <div class="main e_size-s">
+                        <div class="content content-row-2">产品变更</div>
+                    </div>
+                </li>
+                <li class="link" ontap="openNav('page/Fling.html')"> 
+                    <div class="pic">
+                        <span class="e_ico-copy e_ico-pic-blue e_ico-pic-r"></span>
+                    </div>
+                    <div class="main e_size-s">
+                        <div class="content content-row-2">集团甩单录入</div>
+                    </div>
+                </li>
+                <li class="link" ontap="openNav('page/FlingHolder.html')">
+                    <div class="pic">
+                        <span class="e_ico-groupmember e_ico-pic-green e_ico-pic-r"></span>
+                    </div>
+                    <div class="main e_size-s">
+                        <div class="content content-row-2">集团甩单办理</div>
+                    </div>
+                </li>
+                <li class="link" ontap="openNav('page/broadbandPrd.html')">
+                    <div class="pic">
+                        <span class="e_ico-groupProduct e_ico-pic-orange e_ico-pic-r"></span>
+                    </div>
+                    <div class="main e_size-s">
+                        <div class="content content-row-2">企业宽带产品受理</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="c_line"></div>
+    <div class="c_space"></div>
+    <div class="c_line"></div>
+    <!-- 列表 开始 -->
+    <div class="c_box">
+        <!-- 标题 开始 -->
+        <div class="c_title">
+            <div class="text">我的待办</div>
+            <div class="fn">
+                <ul>
+                    <li><span class="e_ico-next"></span>更多</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 标题 结束 -->
+        <div class="c_list c_list-s l_padding l_padding-u">
+            <ul>
+                <li class="link">
+                    <div class="main">
+                        <div class="title">拜访锦业路区域五星客户</div>
+                    </div>
+                    <div class="side">剩余 3 天</div>
+                </li>
+                <li class="link">
+                    <div class="main">
+                        <div class="title">2017合约计划活动推广</div>
+                    </div>
+                    <div class="side">剩余 7 天</div>
+                </li>
+                <li class="link">
+                    <div class="main">
+                        <div class="title">高消费低套餐客户电话推荐</div>
+                    </div>
+                    <div class="side">剩余 21 天</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="c_line"></div>
+    <div class="c_space"></div>
+</div>
+<!-- 标签页 结束 -->
+<script>
+Wade.setRatio();
+registerTabsetFramePage();
+
+</script>
+</body>
+
+</html>

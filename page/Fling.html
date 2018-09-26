@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="../v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="../v5/js/jcl-base.js"></script>
+<script src="../v5/js/jcl.js"></script>
+<script src="../v5/js/i18n/code.zh_CN.js"></script>
+<script src="../v5/js/jcl-plugins.js"></script>
+<script src="../v5/js/jcl-ui.js"></script>
+<script src="../v5/js/ui/component/base/popup.js"></script>
+<script src="../v5/js/ui/component/base/segment.js"></script>
+<script src="../v5/js/ui/component/base/select.js"></script>
+<script src="../v5/js/ui/component/slide/slide.js"></script>
+<script src="../v5/js/ui/component/tabset/tabset.js"></script>
+<script src="../res/local.js"></script>
+</head>
+
+<body>
+<div class="c_header e_show-phone">
+    <div class="back" ontap="closeNav();">集团甩单录入</div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-phone-header">
+    <div class="l_padding">
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li class="required">
+                    <div class="label">集团客户编码</div>
+                    <div class="value">
+                        <span class="e_mix">
+                            <input type="text" value="2201303007" />
+                            <span class="e_ico-check"></span>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="c_space-c"></div>
+        <div class="c_list c_list-s c_list-line c_list-border">
+            <ul>
+                <li>
+                    <div class="pic pic-middle"><span class="e_ico-net e_ico-pic"></span></div>
+                    <div class="main">
+                        <div class="title">国网******公司</div>
+                        <div class="content">2201303007</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="c_space-c"></div>
+        <div class="c_param e_size-s c_param-border c_param-label-5">
+            <ul>
+                <li>
+                    <span class="label">集团类型：</span>
+                    <span class="value">单位集团</span>
+                </li>
+                <li>
+                    <span class="label">客户级别：</span>
+                    <span class="value">A1类集团客户</span>
+                </li>
+                <li>
+                    <span class="label">企业类型：</span>
+                    <span class="value">机关法人</span>
+                </li>
+                <li>
+                    <span class="label">行业类别：</span>
+                    <span class="value">电力,燃力及水的生产和供应业</span>
+                </li>
+                <li>
+                    <span class="label">子行业类别：</span>
+                    <span class="value">电力,热力的生产和供应业</span>
+                </li>
+            </ul>
+        </div>
+        <div class="c_title">
+            <div class="text">选择产品</div>
+        </div>
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li class="required">
+                    <div class="label">产品类型</div>
+                    <div class="value" id="offerTypeWrapper">
+                    </div>
+                </li>
+                <li class="required">
+                    <div class="label">产品名称</div>
+                    <div class="value" id="offerWrapper">
+                    </div>
+                </li>
+                <li class="forProd" style="display:none">
+                    <div class="content link" ontap="showPopup('popup','sale')">
+                        <div class="main">可选优惠</div>
+                        <div class="more"></div>
+                    </div>
+                    <div class="sub sub-noline" id="saleList" style="display:none;">
+                        <div class="main">
+                            <!-- 表单 开始 -->
+                            <div class="c_list c_list-gray c_list-line c_list-border">
+                                <ul>
+                                    <li>
+                                        <div class="main">集团通讯录（V3-400）</div>
+                                        <div ontap="hide(this.parentNode); if(this.parentNode.parentNode.offsetHeight == 0){ hide('saleList')}" class="fn"><span class="e_ico-delete"></span></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="forProd" style="display:none">
+            <div class="c_title">
+                <div class="text">联系人信息</div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li class="required">
+                        <div class="label">联系人姓名</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">联系人电话</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="c_space-2"></div>
+        <div class="c_submit c_submit-center">
+            <button type="button" class="e_button-r e_button-l e_button-navy">重置</button>
+            <button type="button" class="e_button-r e_button-l e_button-green" ontap="$('#msg').css('display','')">提交</button>
+        </div>
+    </div>
+</div>
+<div class="c_popup" id="popup">
+    <div class="c_popupBg" id="popup_bg"></div>
+    <div class="c_popupBox">
+        <div class="c_popupWrapper" id="popup_wrapper">
+            <div class="c_popupGroup">
+                <div class="c_popupItem" id="sale">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">选择优惠</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header">
+                        <div class="c_list c_list-line">
+                            <ul>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团通讯录（出入境检疫局）</div>
+                                        <div class="content content-auto">2元月号码，含 VPMN网内本地通话6000分钟</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团通讯录（V3-400）</div>
+                                        <div class="content content-auto">3元每月每号码，包含400分钟本地网内通话</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团通讯录（V特13）</div>
+                                        <div class="content content-auto">3元每月每号码，含VPMN网内本地通话500分钟</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团通讯录（V特12）</div>
+                                        <div class="content content-auto">拨打网外号码组本地通话0.06元每分钟，接听网外号码组本地被叫按号码使用套餐资费执行</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团通讯录（V特24）</div>
+                                        <div class="content content-auto">0元2500分钟</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">V网1000分钟</div>
+                                        <div class="content content-auto">0元2500分钟网内通话</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="l_bottom">
+                        <div class="c_submit c_submit-full">
+                            <button type="button" class="e_button-l e_button-navy" ontap="hidePopup(this);">取消</button>
+                            <button type="button" class="e_button-l e_button-blue" ontap="hidePopup(this); show('saleList'); showSaleListLi();">确定</button>
+                            <script>
+                            function showSaleListLi() {
+                                var saleList = get("saleList").children[0].children[0].children[0];
+                                for (var i = 0; i < saleList.children.length; i++) {
+                                    saleList.children[i].style.display = "";
+                                }
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="l_float l_float-header" id="msg" style="z-index: 9999;display:none">
+    <!-- 信息提示 开始 -->
+    <div class="c_msg c_msg-success c_msg-full">
+        <div class="wrapper">
+            <div class="emote"></div>
+            <div class="info">
+                <div class="text">
+                    <div class="title e_green">甩单录入成功</div>
+                    <div class="detail" style="max-height:20em;">
+                        <!-- 参数 开始 -->
+                        <div class="c_param c_param-label-5">
+                            <ul>
+                                <li>
+                                    <span class="label">集团名称：</span>
+                                    <span class="value">国网******公司</span>
+                                </li>
+                                <li>
+                                    <span class="label">产品名称：</span>
+                                    <span class="value">集团通讯录</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 参数 结束 -->
+                    </div>
+                </div>
+                <div class="fn">
+                    <button class="e_button-r e_button-l e_button-navy" type="button" ontap="backPopup('popup','discPopup');hide('msg');hidePopup('popup')"><span class="e_ico-ok"></span><span>继续办理</span></button>
+                    <button class="e_button-r e_button-l e_button-blue" type="button" ontap="closeNav();"><span class="e_ico-home"></span><span>返回首页</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 信息提示 结束 -->
+</div>
+<script>
+Wade.setRatio();
+window["popup"] = new Wade.Popup("popup");
+$.Select.append(
+    "offerTypeWrapper",
+    {
+        id: "prdType",
+        name: "prdType",
+        value: "1"
+    },
+    [{
+        TEXT: "集团标准产品",
+        VALUE: "1"
+    },{
+        TEXT: "ADC应用",
+        VALUE: "2"
+    },{
+        TEXT: "行内应用",
+        VALUE: "3"
+    },{
+        TEXT: "MAS应用",
+        VALUE: "4"
+    }]
+);
+$.Select.append(
+    "offerWrapper",
+    {
+        id: "prdCode",
+        name: "prdCode",
+        value: ""
+    },
+    [{
+        TEXT: "MDM移动安全",
+        VALUE: "4"
+    }, {
+        TEXT: "集团E网_静态",
+        VALUE: "5"
+    }, {
+        TEXT: "集团E网_动态",
+        VALUE: "1"
+    }, {
+        TEXT: "BLACKBERRY",
+        VALUE: "9"
+    }, {
+        TEXT: "手机邮箱",
+        VALUE: "9"
+    }, {
+        TEXT: "普通VPMN",
+        VALUE: "9"
+    }, {
+        TEXT: "集团通讯录",
+        VALUE: "9"
+    }, {
+        TEXT: "手机对讲（集群通）",
+        VALUE: "9"
+    }]
+);
+$('#prdCode').bind('change', function(){
+    var val = $('#prdCode').val();
+    if (!!val){
+        $('.forProd').css('display','');
+    }else{
+        $('.forProd').css('display','none');
+    }
+})
+$.Select.append(
+    "vpnCodeLi",
+    {
+        id: "vpnCode",
+        name: "vpnCode",
+        value: "1"
+    },
+    [{
+        TEXT: "2209616357",
+        VALUE: "1"
+    }]
+);
+$.Select.append(
+    "acctCodeLi",
+    {
+        id: "acctCode",
+        name: "acctCode"
+    },
+    [{
+        TEXT: "12342209616357",
+        VALUE: "1"
+    }]
+);
+$('#acctCode').bind('change', function(){
+    var val = $('#acctCode').val();
+    if (!!val){
+        $('.forAcct').css('display','');
+    }else{
+        $('.forAcct').css('display','none');
+    }
+})
+$.Select.append(
+    "contractCodeLi",
+    {
+        id: "contractCode",
+        name: "contractCode"
+    },
+    [{
+        TEXT: "企业宽带业务受理合同",
+        VALUE: "1"
+    }]
+);
+$('#contractCode').bind('change', function(){
+    var val = $('#contractCode').val();
+    if (!!val){
+        $('.forContract').css('display','');
+    }else{
+        $('.forContract').css('display','none');
+    }
+})
+</script>
+</body>
+
+</html>

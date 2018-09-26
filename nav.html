@@ -1,0 +1,692 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="v5/js/jcl-base.js"></script>
+<script src="v5/js/jcl.js"></script>
+<script src="v5/js/i18n/code.zh_CN.js"></script>
+<script src="v5/js/jcl-plugins.js"></script>
+<script src="v5/js/jcl-ui.js"></script>
+<script src="v5/js/ui/component/base/popup.js"></script>
+<script src="v5/js/ui/component/base/segment.js"></script>
+<script src="v5/js/ui/component/slide/slide.js"></script>
+<script src="v5/js/ui/component/tabset/tabset.js"></script>
+<script src="res/local.js"></script>
+<style>
+#navTap > .page{
+    background:#fff;
+}
+#navTap>.tab{
+    background:#f7f7f7;
+}
+#navTap>.tab li.on{
+    background:#fff;
+}
+#navTap>.tab li{
+    color:#333;
+}
+#navTap>.tab li:before{
+    display:none;
+}
+#navTap .c_box{
+    box-shadow:0 0 2px rgba(0,0,0,0.05);
+    margin-bottom:0.1rem;
+}
+#navTap .c_list, #navTap .c_list li{
+    background:transparent;
+}
+#navTap .c_list-line>ul>li:before{
+    border-bottom: 1px solid #eee;
+    border-right:0;
+}
+</style>
+</head>
+
+<body>
+<div class="c_header">
+    <div class="text"><span class="e_ico-menu"></span> 导航</div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-header">
+    <div class="c_tab c_tab-full c_tab-v c_tab-s" id="navTap">
+        <div class="tab">
+            <div class="list">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="content l_padding" title="客户管理">
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1506.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团账单查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9907.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">订单查询</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c_title">
+                    <div class="text e_size-s">集团信息管理</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default12.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团资料查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9131.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团客户新增</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9281.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团资料修改</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu10.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团资料删除</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c_title">
+                    <div class="text e_size-s">集团成员信息管理</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1501.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团成员资料查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu11.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团成员资料新增</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9281.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团成员资料修改</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu12.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团成员资料删除</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c_title">
+                    <div class="text e_size-s">集团产品对手信息管理</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1A17.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团产品对手信息查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProudctSignWO.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团产品对手信息新增</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default18.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团产品对手信息修改</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content l_padding l_padding-u" title="个人业务">
+                <div class="c_title">
+                    <div class="text e_size-s">查询类</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1506.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">话费查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9907.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">账单查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm5107.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">缴费历史查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9413.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">积分查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crmRGM3.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">订购产品查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9991.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">客户资料查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1A17.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">套餐余量查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9244.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">业务展示</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9561.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">新优惠汇总查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm8412.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">集团账户查询</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c_title">
+                    <div class="text e_size-s">办理类</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9594.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">梦网业务查询/退订</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default09.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">国际漫游业务</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9214.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9261.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">附加产品变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9221.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">家庭成员管理</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9236.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">申请停开机</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crmD314.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">密码变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu1.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">国际长途办理</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu2.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">4G补换卡</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1701.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">优惠添加</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BIL1415.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">优惠删除</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu3.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">流量专区</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9273.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">服务变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu4.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">家庭宽带</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content l_padding" title="集团业务">
+                <div class="c_title">
+                    <div class="text e_size-s">短流程类</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProOrder.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品订购</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_MemberShortChange.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品资料变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProCancel.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品退订</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProMemberAdd.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品成员添加</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProudctSignWO.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品成员资料变更</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/BUSI_Group_ProMemberDel.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">产品成员删除</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm4326.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">网外资料新增</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c_title">
+                    <div class="text e_size-s">长流程类</div>
+                </div>
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu5.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">订单中心</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu6.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">企业宽带产品受理</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu7.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">企业宽带成员新增</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu9.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">长流程签约办理</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu8.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">长流程开通工单确认</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content l_padding" title="工作管理">
+                <div class="c_box">
+                    <div class="c_list c_list-s c_list-v c_list-pic-s c_list-col-3">
+                        <ul>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default13.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">待办工作</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default14.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">公告查询</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/menu1.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">位置采集</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default15.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">定位签到</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default18.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">工作日志记录</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/default09.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">竞争情报上报</div>
+                                </div>
+                            </li>
+                            <li class="link">
+                                <div class="pic">
+                                    <img src="res/menu/crm9251.png" />
+                                </div>
+                                <div class="main">
+                                    <div class="content content-row-2">商机管理</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content" title="知识共享">
+                <div class="c_list c_list-s c_list-line">
+                    <ul>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">和职教平台建设项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">云MAS白皮书</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">云WiFi业务管理办法（试行版）</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">集团客户部特殊号码管理实施细则</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">中国移动天津公司集团客户服务管理规范V4.1</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">中国移动天津公司集团客户业务办理办法</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">中国移动通信集团天津有限公司政企业务一级稽核管理办法</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">天津公司集团专线业务管理办法（2018年版）</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">政务行业-天津市公安局新一代移动警务建设项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">医疗行业-福建省区域医疗综合信息化项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">商贸行业-产品+服务双轮驱动：以极光宽带与次日通服务深耕中小企业专线市场项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">TD商务宝</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">农业行业-“北斗驼铃”引领智能放牧项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                        <li class="link">
+                            <div class="main">
+                                <div class="title">能源行业-国网电力互联网+深度融合项目</div>
+                            </div>
+                            <div class="more"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c_line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+Wade.setRatio();
+window["navTap"] = new Wade.Tabset("navTap");
+registerTabsetFramePage();
+</script>
+</body>
+
+</html>

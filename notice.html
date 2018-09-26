@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="v5/js/jcl-base.js"></script>
+<script src="v5/js/jcl.js"></script>
+<script src="v5/js/i18n/code.zh_CN.js"></script>
+<script src="v5/js/jcl-plugins.js"></script>
+<script src="v5/js/jcl-ui.js"></script>
+<script src="v5/js/ui/component/base/popup.js"></script>
+<script src="v5/js/ui/component/base/segment.js"></script>
+<script src="v5/js/ui/component/slide/slide.js"></script>
+<script src="v5/js/ui/component/tabset/tabset.js"></script>
+<script src="res/local.js"></script>
+<style>
+#navTap > .page{
+    background:#fff;
+}
+#navTap>.tab{
+    background:#f7f7f7;
+}
+#navTap>.tab li.on{
+    background:#fff;
+}
+#navTap>.tab li{
+    color:#333;
+}
+#navTap>.tab li:before{
+    display:none;
+}
+#navTap .c_box{
+    box-shadow:0 0 2px rgba(0,0,0,0.05);
+    margin-bottom:0.1rem;
+}
+#navTap .c_list, #navTap .c_list li{
+    background:transparent;
+}
+#navTap .c_list-line>ul>li:before{
+    border-bottom: 1px solid #eee;
+    border-right:0;
+}
+</style>
+</head>
+
+<body>
+    <div class="c_header">
+        <div class="text"><span class="e_ico-notice"></span> 公告</div>
+        <div class="fn">
+            <button type="button" class="e_button-blue"><span class="e_ico-search"></span><span>搜索</span></button>
+        </div>
+    </div>
+    <div class="c_scroll c_scroll-float c_scroll-header" id="scroller">
+        <div class="c_tab c_tab-avg c_tab-full c_tab-sub" id="noticeTab">
+            <div class="tab">
+                <div class="list">
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="page">
+                <div class="content e_hide-x" title="未读">
+                    <!-- 列表 开始 -->
+                    <div class="c_list c_list-line">
+                        <ul>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">2201206092_22000710_集客网厅已建档业务预约办理</div>
+                                        <div class="content">2018-08-30</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">订单中心_开通_时讯通_天津*****公司_手机端</div>
+                                        <div class="content">2018-08-30</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动两年向客户送出560亿元网络提速降费“红包”，今年继续</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动印发防范打击通讯信息诈骗工作问责办法</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动全力打击通讯信息诈骗 为用户挽回潜在经济损失30亿元</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动两年向客户送出560亿元网络提速降费“红包”，今年继续</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动印发防范打击通讯信息诈骗工作问责办法</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动全力打击通讯信息诈骗 为用户挽回潜在经济损失30亿元</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 列表 结束 -->
+                </div>
+                <div class="content e_hide-x" title="已读">
+                    <!-- 列表 开始 -->
+                    <div class="c_list c_list-line">
+                        <ul>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动两年向客户送出560亿元网络提速降费“红包”，今年继续</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动印发防范打击通讯信息诈骗工作问责办法</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动全力打击通讯信息诈骗 为用户挽回潜在经济损失30亿元</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动两年向客户送出560亿元网络提速降费“红包”，今年继续</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动印发防范打击通讯信息诈骗工作问责办法</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动全力打击通讯信息诈骗 为用户挽回潜在经济损失30亿元</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动两年向客户送出560亿元网络提速降费“红包”，今年继续</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动印发防范打击通讯信息诈骗工作问责办法</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动全力打击通讯信息诈骗 为用户挽回潜在经济损失30亿元</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                                    <div class="main">
+                                        <div class="title title-auto">中国移动网络提速降费取得阶段性成效 今年落实政府要求继续推出</div>
+                                        <div class="content">2018-09-23</div>
+                                    </div>
+                                    
+                                    <div class="more"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="main e_center e_size-m e_gray">上拉加载更多</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 列表 结束 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c_popup" id="popup">
+        <div class="c_popupBg" id="popup_bg"></div>
+        <div class="c_popupBox">
+            <div class="c_popupWrapper" id="popup_wrapper">
+                <div class="c_popupGroup">
+                    <div class="c_popupItem" id="popup-detail">
+                        <div class="c_header">
+                            <div class="back" ontap="hidePopup(this)">查看详情</div>
+                        </div>
+                        <div class="c_scroll c_scroll-white c_scroll-float c_scroll-header">
+                            <!-- 段落 开始 -->
+                            <div class="c_article">
+                                <div class="title" style="line-height:1.3;">
+                                    尊享𡘙套餐！43GB大流量，3000分钟大语音，5折大实惠！
+                                </div>
+                                <div class="info">
+                                    <span>中国移动通信陕西公司</span>
+                                    <span>/ 2017-04-20</span>
+                                </div>
+                                <div class="content">
+                                    大文化就配大套餐，一个大不够优惠，三大成𡘙（tài）才更尽兴<br /><br />
+                                    <div class="e_center e_size-l e_red" style="line-height:1.5;">
+                                        新老客户均可办理<br />
+                                        预存享5折购特权
+                                    </div>
+                                    <div class="e_center">
+                                        预存1200元<br />
+                                        享12个月月费5折优惠，至高省<span class="e_red">2376元！</span><br /><br />
+
+                                        预存2400元<br />
+                                        享24个月月费5折优惠，至高省<span class="e_red">4752元！</span><br /><br />
+
+                                        <span class="e_size-xs" style="line-height:1.5;">注：老客户办理次月生效；预存1200元，话费分12个月等额返还；预存2400元，话费分24个月等额返还 。</span>
+                                    </div>
+                                </div>
+                                <div class="aside">
+                                    中国移动通信陕西有限公司<br />
+                                    2017-04-20
+                                </div>
+                            </div>
+                            <!-- 段落 结束 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Wade.setRatio();
+        registerTabsetFramePage();
+        window["popup"] = new Wade.Popup("popup");
+        window["noticeTab"] = new Wade.Tabset("noticeTab");
+    </script>
+
+</body>
+
+
+</html>

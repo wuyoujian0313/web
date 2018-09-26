@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html size="s">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>天津移动Mesop</title>
+    <link rel="stylesheet" href="../v5/css/playkit.css" rel="stylesheet" type="text/css" />
+    <script src="../v5/js/jcl-base.js"></script>
+    <script src="../v5/js/jcl.js"></script>
+    <script src="../v5/js/i18n/code.zh_CN.js"></script>
+    <script src="../v5/js/jcl-plugins.js"></script>
+    <script src="../v5/js/jcl-ui.js"></script>
+    <script src="../v5/js/ui/component/base/popup.js"></script>
+    <script src="../v5/js/ui/component/base/switch.js"></script>
+    <script src="../v5/js/ui/component/base/select.js"></script>
+    <script src="../v5/js/ui/component/slide/slide.js"></script>
+    <script src="../v5/js/ui/component/tabset/tabset.js"></script>
+    <script src="../res/local.js"></script>
+</head>
+
+<body>
+<div class="c_header e_show-phone">
+    <div class="back" ontap="closeNav();">产品变更</div>
+    <div class="fn logged" style="display:none">
+        <button class="e_button-blue" ontap="$('.logged').css('display','none');show('login')">
+            <span class="e_ico-exit"></span> 注销
+        </button>
+    </div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-phone-header" id="login">
+    <div class="l_padding">
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li class="required">
+                    <div class="label">服务号码</div>
+                    <div class="value">
+                        <input type="text" />
+                    </div>
+                </li>
+                <li class="required">
+                    <div class="label">服务密码</div>
+                    <div class="value">
+                        <input type="text" />
+                    </div>
+                </li>
+                <li class="required">
+                    <div class="label">保持登录</div>
+                    <div class="value">
+                        <div class="e_switch">
+                            <div class="e_switchOn"></div>
+                            <div class="e_switchOff"></div>
+                            <input type="hidden" id="mySwitch" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="c_space-2"></div>
+        <div class="c_submit c_submit-center">
+            <button type="button" class="e_button-r e_button-l e_button-green" ontap="hide('login');$('.logged').css('display','');prodTab.adjust()">登录</button>
+        </div>
+    </div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-submit c_scroll-phone-header logged" style="display:none">
+    <div class="c_list c_list-s c_list-green">
+        <ul>
+            <li>
+                <div class="pic pic-middle"><span class="e_ico-user e_ico-pic e_ico-pic-s"></span></div>
+                <div class="main">
+                    <div class="title">辛 * 护</div>
+                    <div class="content"></div>
+                </div>
+                <div class="side">
+                    135****2048
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="c_tab c_tab-avg c_tab-full c_tab-sub" id="prodTab" style="top:0.5rem;bottom:0.5rem">
+        <div class="tab">
+            <div class="list">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="content e_hide-x" title="全球通">
+                <div class="c_list c_list-line">
+                    <ul>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120605]全球通无限尊享套餐288档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120606]全球通无限尊享套餐388档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]全球通无限尊享套餐588档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]移动王卡套餐28元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]4G飞享套餐（2018升级版）38元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]4G飞享套餐（2018升级版）58元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]4G飞享套餐（2018升级版）88元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]4G飞享套餐（2018升级版）128元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]4G飞享套餐（2018升级版）168元档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 列表 结束 -->
+            </div>
+            <div class="content e_hide-x" title="神州行">
+                <div class="c_list c_list-line">
+                    <ul>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120605]神州行套餐288档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120606]神州行套餐388档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group link" ontap="showPopup('popup','discPopup')">
+                                <div class="main">
+                                    <div class="title">[220120607]神州行套餐588档</div>
+                                </div>
+                                <div class="more"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 列表 结束 -->
+            </div>
+            <div class="content e_hide-x" title="动感地带">
+                <div class="c_list c_list-line">
+                    <ul>
+                    </ul>
+                </div>
+                <!-- 列表 结束 -->
+            </div>
+        </div>
+    </div>
+    <div class="l_bottom">
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li>
+                    <div class="value">
+                        <span class="e_mix">
+                        <input type="text" />
+                        <button class="e_button-green">搜索</button>
+                    </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="c_popup" id="popup">
+    <div class="c_popupBg" id="popup_bg"></div>
+    <div class="c_popupBox">
+        <div class="c_popupWrapper" id="popup_wrapper">
+            <div class="c_popupGroup">
+                <div class="c_popupItem" id="discPopup">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">选择产品优惠</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header">
+                        <div class="c_list c_list-line">
+                            <ul>
+                                <li id="selectSale">
+                                    <div class="main">
+                                        <div class="title">[13443]假日流量套餐</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[342134]不限量叠加包0元档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123450]不限量叠加包10元档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123451]不限量叠加包20元档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123452]不限量叠加包50元档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123453]不限量优惠包升速优惠1G档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[13454]不限量优惠包升速优惠2G档</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123455]咪咕视频定向流量5G</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123456]咪咕视频定向流量10G</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123457]咪咕视频定向流量20G</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123458]0元10G国内通用流量</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">[123459]天津公安局短信包</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="l_bottom">
+                        <div class="c_submit c_submit-full">
+                            <button type="button" class="e_button-l e_button-navy" ontap="hidePopup(this);">取消</button>
+                            <button type="button" class="e_button-l e_button-blue" ontap="forwardPopup('popup','submitPopup')">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_popupGroup">
+                <div class="c_popupItem" id="submitPopup">
+                    <div class="c_header">
+                        <div class="back" ontap="backPopup('popup','discPopup');">变更确认</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-header">
+                        <div class="l_padding">
+                            <div class="c_list c_list-line c_list-border">
+                                <ul>
+                                    <li class="required">
+                                        <div class="label">变更套餐</div>
+                                        <div class="value">
+                                            <input type="text" value="全球通无限尊享套餐288档" readonly />
+                                        </div>
+                                    </li>
+                                    <li class="required">
+                                        <div class="label">生效方式</div>
+                                        <div class="value" id="typeLi"></div>
+                                    </li>
+                                    <li class="required">
+                                        <div class="label">验证码</div>
+                                        <div class="value">
+                                            <span class="e_mix">
+                                                <input type="text">
+                                                <button type="button"><span class="e_ico-import"></span><span>获取</span></button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="c_space-2"></div>
+                            <div class="c_submit c_submit-center">
+                                <button type="button" class="e_button-r e_button-l e_button-navy" ontap="backPopup('popup','discPopup');">取消</button>
+                                <button type="button" class="e_button-r e_button-l e_button-blue" ontap="show('msg')">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="l_float l_float-header" id="msg" style="z-index: 9999;display:none">
+        <!-- 信息提示 开始 -->
+        <div class="c_msg c_msg-success c_msg-full">
+            <div class="wrapper">
+                <div class="emote"></div>
+                <div class="info">
+                    <div class="text">
+                        <div class="title e_green">恭喜！产品变更成功</div>
+                        <div class="detail" style="max-height:20em;">
+                            <!-- 参数 开始 -->
+                            <div class="c_param c_param-label-5">
+                                <ul>
+                                    <li>
+                                        <span class="label">客户号码：</span>
+                                        <span class="value">13510242048</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">变更产品：</span>
+                                        <span class="value">全球通无限尊享套餐288档</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 参数 结束 -->
+                        </div>
+                    </div>
+                    <div class="fn">
+                        <button class="e_button-r e_button-l e_button-navy" type="button" ontap="backPopup('popup','discPopup');hide('msg');hidePopup('popup')"><span class="e_ico-ok"></span><span>继续办理</span></button>
+                        <button class="e_button-r e_button-l e_button-blue" type="button" ontap="closeNav();"><span class="e_ico-home"></span><span>返回首页</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 信息提示 结束 -->
+    </div>
+<script>
+Wade.setRatio();
+window["mySwitch"] = new Wade.Switch("mySwitch", {
+    switchOn: false,
+    onValue: "on",
+    offValue: "off"
+});
+window["popup"] = new Wade.Popup("popup");
+window["prodTab"] = new Wade.Tabset("prodTab");
+$.Select.append(
+    "typeLi",
+    {
+        id: "typeCode",
+        name: "typeCode",
+        value: "1"
+    },
+    [{
+        TEXT: "立即生效",
+        VALUE: "1"
+    },{
+        TEXT: "下月生效",
+        VALUE: "2"
+    }]
+);
+</script>
+</body>
+
+</html>

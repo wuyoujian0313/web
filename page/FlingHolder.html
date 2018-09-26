@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="../v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="../v5/js/jcl-base.js"></script>
+<script src="../v5/js/jcl.js"></script>
+<script src="../v5/js/i18n/code.zh_CN.js"></script>
+<script src="../v5/js/jcl-plugins.js"></script>
+<script src="../v5/js/jcl-ui.js"></script>
+<script src="../v5/js/ui/component/base/popup.js"></script>
+<script src="../v5/js/ui/component/base/segment.js"></script>
+<script src="../v5/js/ui/component/base/select.js"></script>
+<script src="../v5/js/ui/component/slide/slide.js"></script>
+<script src="../v5/js/ui/component/tabset/tabset.js"></script>
+<script src="../res/local.js"></script>
+</head>
+
+<body>
+<div class="c_header e_show-phone">
+    <div class="back" ontap="closeNav();">集团甩单办理</div>
+    <div class="fn">
+        <button class="e_button-blue" ontap="showPopup('popup','popup-query')"><span class="e_ico-search"></span> 搜索</button>
+    </div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-phone-header">
+    <div class="c_list c_list-line">
+        <ul>
+            <li>
+                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                    <div class="main">
+                        <div class="title title-auto">国网******公司</div>
+                        <div class="content">2201303007</div>
+                    </div>
+                    <div class="more"></div>
+                </div>
+            </li>
+            <li>
+                <div class="group link" ontap="showPopup('popup','popup-detail')">
+                    <div class="main">
+                        <div class="title title-auto">天津******集团</div>
+                        <div class="content">6531303007</div>
+                    </div>
+                    <div class="more"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="c_line"></div>
+</div>
+<div class="c_popup" id="popup">
+    <div class="c_popupBg" id="popup_bg"></div>
+    <div class="c_popupBox">
+        <div class="c_popupWrapper" id="popup_wrapper">
+            <div class="c_popupGroup">
+                <div class="c_popupItem" id="popup-query">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">查询</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header">
+                        <div class="l_padding">
+                            <div class="c_list c_list-line c_list-border">
+                                <ul>
+                                    <li class="">
+                                        <div class="label">集团名称</div>
+                                        <div class="value">
+                                            <input type="text" />
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="label">集团编码</div>
+                                        <div class="value">
+                                            <input type="text" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="c_space-2"></div>
+                            <div class="c_submit c_submit-center">
+                                <button type="button" class="e_button-r e_button-l e_button-green" ontap="hidePopup(this)">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="c_popupItem" id="popup-detail">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">甩单详情</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header">
+                        <div class="l_padding">
+                            <div class="c_param e_size-s c_param-border c_param-label-5">
+                                <ul>
+                                    <li>
+                                        <span class="label">集团名称：</span>
+                                        <span class="value">国网******公司</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">集团编码：</span>
+                                        <span class="value">2201303007</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品类型：</span>
+                                        <span class="value">集团标准产品</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品名称：</span>
+                                        <span class="value">集团通讯录</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品优惠：</span>
+                                        <span class="value">集团通讯录（V3-400）</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">联系人姓名：</span>
+                                        <span class="value">宋小白</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">联系人电话：</span>
+                                        <span class="value">13512345678</span>
+                                    </li>
+                                </ul>
+                                <div class="c_space"></div>
+                                <div class="c_submit c_submit-center">
+                                    <button type="button" class="e_button-r e_button-green" ontap="window.location='FlingSubmit.html'">立即办理</button>
+                                </div>
+                            </div>
+                            <div class="c_space"></div>
+
+                            <div class="c_param e_size-s c_param-border c_param-label-5">
+                                <ul>
+                                    <li>
+                                        <span class="label">集团名称：</span>
+                                        <span class="value">国网******公司</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">集团编码：</span>
+                                        <span class="value">2201303007</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品类型：</span>
+                                        <span class="value">集团标准产品</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品名称：</span>
+                                        <span class="value">集团通讯录</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">产品优惠：</span>
+                                        <span class="value">集团通讯录（V特13）</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">联系人姓名：</span>
+                                        <span class="value">宋小白</span>
+                                    </li>
+                                    <li>
+                                        <span class="label">联系人电话：</span>
+                                        <span class="value">13512345678</span>
+                                    </li>
+                                </ul>
+                                <div class="c_space"></div>
+                                <div class="c_submit c_submit-center">
+                                    <button type="button" class="e_button-r e_button-green" ontap="window.location='FlingSubmit.html'">立即办理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="l_float l_float-header" id="msg" style="z-index: 9999;display:none">
+    <!-- 信息提示 开始 -->
+    <div class="c_msg c_msg-success c_msg-full">
+        <div class="wrapper">
+            <div class="emote"></div>
+            <div class="info">
+                <div class="text">
+                    <div class="title e_green">甩单录入成功</div>
+                    <div class="detail" style="max-height:20em;">
+                        <!-- 参数 开始 -->
+                        <div class="c_param c_param-label-5">
+                            <ul>
+                                <li>
+                                    <span class="label">集团编码：</span>
+                                    <span class="value">13510242048</span>
+                                </li>
+                                <li>
+                                    <span class="label">产品名称：</span>
+                                    <span class="value">集团通讯录</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 参数 结束 -->
+                    </div>
+                </div>
+                <div class="fn">
+                    <button class="e_button-r e_button-l e_button-navy" type="button" ontap="backPopup('popup','discPopup');hide('msg');hidePopup('popup')"><span class="e_ico-ok"></span><span>继续办理</span></button>
+                    <button class="e_button-r e_button-l e_button-blue" type="button" ontap="closeNav();"><span class="e_ico-home"></span><span>返回首页</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 信息提示 结束 -->
+</div>
+<script>
+Wade.setRatio();
+window["popup"] = new Wade.Popup("popup");
+</script>
+</body>
+
+</html>

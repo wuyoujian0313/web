@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="v5/js/jcl-base.js"></script>
+<script src="v5/js/jcl.js"></script>
+<script src="v5/js/i18n/code.zh_CN.js"></script>
+<script src="v5/js/jcl-plugins.js"></script>
+<script src="v5/js/jcl-ui.js"></script>
+<script src="v5/js/ui/component/base/switch.js"></script>
+<script src="v5/js/ui/component/base/popup.js"></script>
+<script src="v5/js/ui/component/tabset/tabset.js"></script>
+<script src="res/local.js"></script>
+</head>
+<body>
+<div class="c_tab c_tab-avg c_tab-full c_tab-nav" id="tab">
+    <div class="tab">
+        <div class="list">
+            <ul>
+                <li>
+                    <div class="ico"><span class="e_ico-home"></span></div>
+                    <div class="text">首页</div>
+                </li>
+                <li>
+                    <div class="ico"><span class="e_ico-more"></span></div>
+                    <div class="text">导航</div>
+                </li>
+                <li>
+                    <div class="ico"><span class="e_ico-msg"></span></div>
+                    <div class="text">消息</div>
+                    <div class="num">8</div>
+                </li>
+                <li>
+                    <div class="ico"><span class="e_ico-notice"></span></div>
+                    <div class="text">公告</div>
+                    <div class="num">12</div>
+                </li>
+                <li>
+                    <div class="ico"><span class="e_ico-center"></span></div>
+                    <div class="text">我</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page">
+        <div class="content">
+            <iframe src="home.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+        	<iframe src="nav.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <iframe src="news.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <iframe src="notice.html" frameborder="0"></iframe>
+        </div>
+        <div class="content">
+            <iframe src="me.html" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+<div class="c_popup c_popup-mainFrame" id="popup">
+    <div class="c_popupBg" id="popup_bg"></div>
+    <div class="c_popupBox">
+        <div class="c_popupWrapper" id="popup_wrapper">
+            <div class="c_popupGroup">
+                <div class="c_popupItem" id="popup-main">
+                    <iframe id="mainFrame" src="" frameborder="0" style="display:none;"></iframe>
+                    <div class="l_float" id="loading">
+                        <div class="c_header">
+                            <div class="back" ontap="hidePopup(this);">载入中...</div>
+                        </div>
+                        <div class="c_scroll c_scroll-float c_scroll-header">
+                            <div class="c_msg c_msg-full c_msg-loading">
+                                <div class="wrapper">
+                                    <div class="emote"></div>
+                                    <div class="info">
+                                        <div class="text">
+                                            <div class="title">努力加载中</div>
+                                            <div class="content">loading</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    Wade.setRatio();
+    window["tab"] = new Wade.Tabset("tab");
+    $("#tab").afterSwitchAction(function(e, idx){
+    	closeNav();
+    });
+    window["popup"] = new Wade.Popup("popup");
+</script>
+</body>
+</html>

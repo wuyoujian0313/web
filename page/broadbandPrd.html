@@ -1,0 +1,660 @@
+<!DOCTYPE HTML>
+<html size="s">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>天津移动Mesop</title>
+<link rel="stylesheet" href="../v5/css/playkit.css" rel="stylesheet" type="text/css" />
+<script src="../v5/js/jcl-base.js"></script>
+<script src="../v5/js/jcl.js"></script>
+<script src="../v5/js/i18n/code.zh_CN.js"></script>
+<script src="../v5/js/jcl-plugins.js"></script>
+<script src="../v5/js/jcl-ui.js"></script>
+<script src="../v5/js/ui/component/base/popup.js"></script>
+<script src="../v5/js/ui/component/base/segment.js"></script>
+<script src="../v5/js/ui/component/base/select.js"></script>
+<script src="../v5/js/ui/component/slide/slide.js"></script>
+<script src="../v5/js/ui/component/tabset/tabset.js"></script>
+<script src="../res/local.js"></script>
+</head>
+
+<body>
+<div class="c_header e_show-phone">
+    <div class="back" ontap="closeNav();">企业宽带产品受理</div>
+</div>
+<div class="c_scroll c_scroll-float c_scroll-phone-header">
+    <div class="l_padding">
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li class="required">
+                    <div class="label">集团客户编码</div>
+                    <div class="value">
+                        <span class="e_mix">
+                            <input type="text" value="2201303007" />
+                            <span class="e_ico-check"></span>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="c_space-c"></div>
+        <div class="c_list c_list-s c_list-line c_list-border">
+            <ul>
+                <li>
+                    <div class="pic pic-middle"><span class="e_ico-net e_ico-pic"></span></div>
+                    <div class="main">
+                        <div class="title">国网******公司</div>
+                        <div class="content">2201303007</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="c_space-c"></div>
+        <div class="c_param e_size-s c_param-border c_param-label-5">
+            <ul>
+                <li>
+                    <span class="label">集团类型：</span>
+                    <span class="value">单位集团</span>
+                </li>
+                <li>
+                    <span class="label">客户级别：</span>
+                    <span class="value">A1类集团客户</span>
+                </li>
+                <li>
+                    <span class="label">企业类型：</span>
+                    <span class="value">机关法人</span>
+                </li>
+                <li>
+                    <span class="label">行业类别：</span>
+                    <span class="value">电力,燃力及水的生产和供应业</span>
+                </li>
+                <li>
+                    <span class="label">子行业类别：</span>
+                    <span class="value">电力,热力的生产和供应业</span>
+                </li>
+            </ul>
+        </div>
+        <div class="c_title">
+            <div class="text">选择产品</div>
+        </div>
+        <div class="c_list c_list-line c_list-border">
+            <ul>
+                <li class="required">
+                    <div class="label">产品类型</div>
+                    <div class="value" id="offerTypeWrapper">
+                    </div>
+                </li>
+                <li class="required">
+                    <div class="label">产品名称</div>
+                    <div class="value" id="offerWrapper">
+                    </div>
+                </li>
+                <li class="forProd" style="display:none">
+                    <div class="content link" ontap="showPopup('popup','sale')">
+                        <div class="main">可选优惠</div>
+                        <div class="side e_hide" id="saleTag"><span class="e_tag e_tag-green e_size-xs">立即生效</span></div>
+                        <div class="more"></div>
+                    </div>
+                    <div class="sub sub-noline" id="saleList" style="display:none;">
+                        <div class="main">
+                            <!-- 表单 开始 -->
+                            <div class="c_list c_list-gray c_list-line c_list-border">
+                                <ul>
+                                    <li>
+                                        <div class="main">多媒体电话集团服务</div>
+                                        <div ontap="hide(this.parentNode); if(this.parentNode.parentNode.offsetHeight == 0){ hide('saleList')}" class="fn"><span class="e_ico-delete"></span></div>
+                                    </li>
+                                    <li>
+                                        <div class="main">集团驻地网宽带服务</div>
+                                        <div ontap="hide(this.parentNode); if(this.parentNode.parentNode.offsetHeight == 0){ hide('saleList')}" class="fn"><span class="e_ico-delete"></span></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="forProd" style="display:none">
+            <div class="c_title">
+                <div class="text">合同信息</div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li class="required">
+                        <div class="label">选择合同</div>
+                        <div class="value" id="contractCodeLi">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_space-c forContract" style="display:none"></div>
+            <div class="c_param e_size-s c_param-border c_param-label-6 forContract" style="display:none">
+                <ul>
+                    <li>
+                        <span class="label">合同名称：</span>
+                        <span class="value">企业宽带业务受理合同</span>
+                    </li>
+                    <li>
+                        <span class="label">合同业务类型：</span>
+                        <span class="value">受理类</span>
+                    </li>
+                    <li>
+                        <span class="label">上级银行：</span>
+                        <span class="value">中国银行</span>
+                    </li>
+                    <li>
+                        <span class="label">银行名称：</span>
+                        <span class="value">中国银行天津市XXXXX分行</span>
+                    </li>
+                    <li>
+                        <span class="label">合同号：</span>
+                        <span class="value"></span>
+                    </li>
+                    <li>
+                        <span class="label">银行账号：</span>
+                        <span class="value"></span>
+                    </li>
+                    <li>
+                        <span class="label">账户结余：</span>
+                        <span class="value"></span>
+                    </li>
+                </ul>
+                <div class="c_space"></div>
+                <div class="c_line c_line-dashed"></div>
+                <div class="c_space"></div>
+                <ul>
+                    <li>
+                        <span class="label">合同ID：</span>
+                        <span class="value">14236234r234</span>
+                    </li>
+                    <li>
+                        <span class="label">产品名称：</span>
+                        <span class="value">聚类市场（集客驻地网）</span>
+                    </li>
+                    <li>
+                        <span class="label">开始时间：</span>
+                        <span class="value">2018-09-01</span>
+                    </li>
+                    <li>
+                        <span class="label">结束时间：</span>
+                        <span class="value">2019-08-31</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_title">
+                <div class="text">产品参数信息</div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li>
+                        <div class="label">VPN编码</div>
+                        <div class="value" id="vpnCodeLi">
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团成员数</div>
+                        <div class="value">
+                            <input type="text" value="10000" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团管理员数</div>
+                        <div class="value">
+                            <input type="text" value="5" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">固定集团成员数</div>
+                        <div class="value">
+                            <input type="text" value="5000" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">移动集团成员数</div>
+                        <div class="value">
+                            <input type="text" value="5000" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团部门数</div>
+                        <div class="value">
+                            <input type="text" value="5" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">PC客户端成员数</div>
+                        <div class="value">
+                            <input type="text" value="5000" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团Hunting组数</div>
+                        <div class="value">
+                            <input type="text" value="5" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团PickUp组数</div>
+                        <div class="value">
+                            <input type="text" value="5" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">一号通成员数</div>
+                        <div class="value">
+                            <input type="text" value="10000" />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">集团话务员数</div>
+                        <div class="value">
+                            <input type="text" value="5" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_title">
+                <div class="text">资源信息</div>
+            </div>
+            <div class="c_param c_param-border">
+                <ul>
+                    <li>
+                        <span class="label">资源类型：</span>
+                        <span class="value">集团产品编码</span>
+                    </li>
+                    <li>
+                        <span class="label">资源号码：</span>
+                        <span class="value">22292278157</span>
+                    </li>
+                    <li>
+                        <span class="label">校验结果：</span>
+                        <span class="value e_green">成功</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_title">
+                <div class="text">账户信息</div>
+                <div class="fn">
+                    <ul>
+                        <li ontap="showPopup('popup','popup-acct')"><span class="e_ico-add"></span>新增账户</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li class="required">
+                        <div class="label">账户列表</div>
+                        <div class="value" id="acctCodeLi">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_space-c forAcct" style="display:none"></div>
+            <div class="c_param e_size-s c_param-border c_param-label-4 forAcct" style="display:none">
+                <ul>
+                    <li>
+                        <span class="label">账户名称：</span>
+                        <span class="value">国网天津市电力公司</span>
+                    </li>
+                    <li>
+                        <span class="label">账户类别：</span>
+                        <span class="value">现金</span>
+                    </li>
+                    <li>
+                        <span class="label">上级银行：</span>
+                        <span class="value">中国银行</span>
+                    </li>
+                    <li>
+                        <span class="label">银行名称：</span>
+                        <span class="value">中国银行天津市XXXXX分行</span>
+                    </li>
+                    <li>
+                        <span class="label">合同号：</span>
+                        <span class="value"></span>
+                    </li>
+                    <li>
+                        <span class="label">银行账号：</span>
+                        <span class="value"></span>
+                    </li>
+                    <li>
+                        <span class="label">账户结余：</span>
+                        <span class="value"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_title">
+                <div class="text">经办人信息</div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li class="required">
+                        <div class="label">证件类型</div>
+                        <div class="value">
+                            <span class="e_mix">
+                                <span class="e_select">身份证</span>
+                                <button type="button" class="e_button-blue"><span>在线采集</span></button>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">证件号码</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">客户姓名</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">证件地址</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="label">国籍</div>
+                        <div class="value">
+                            <input type="text" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_title">
+                <div class="text">使用人信息</div>
+            </div>
+            <div class="c_list c_list-line c_list-border">
+                <ul>
+                    <li class="required">
+                        <div class="label">证件类型</div>
+                        <div class="value">
+                            <span class="e_mix">
+                                <span class="e_select">身份证</span>
+                                <button type="button" class="e_button-blue"><span>在线采集</span></button>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">证件号码</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">客户姓名</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                    <li class="required">
+                        <div class="label">证件地址</div>
+                        <div class="value">
+                            <input type="text" readonly />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="c_space-2"></div>
+            <div class="c_submit c_submit-center">
+                <button type="button" class="e_button-r e_button-l e_button-navy">重置</button>
+                <button type="button" class="e_button-r e_button-l e_button-green">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="c_popup" id="popup">
+    <div class="c_popupBg" id="popup_bg"></div>
+    <div class="c_popupBox">
+        <div class="c_popupWrapper" id="popup_wrapper">
+            <div class="c_popupGroup">
+                <div class="c_popupItem e_hide-x" id="popup-acct">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">新增账户</div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header l_padding l_padding-u">
+                        <div class="c_title">
+                            <div class="text">产品参数信息</div>
+                        </div>
+                        <div class="c_list c_list-line c_list-border">
+                            <ul>
+                                <li class="required">
+                                    <div class="label">账户名称</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li class="required">
+                                    <div class="label">账户类别</div>
+                                    <div class="value">
+                                        <span class="e_select">现金</span>
+                                    </div>
+                                </li>
+                                <li class="required">
+                                    <div class="label">上级银行</div>
+                                    <div class="value">
+                                        <span class="e_select">请选择</span>
+                                    </div>
+                                </li>
+                                <li class="required">
+                                    <div class="label">银行名称</div>
+                                    <div class="value">
+                                        <span class="e_select">请选择</span>
+                                    </div>
+                                </li>
+                                <li class="required">
+                                    <div class="label">银行账号</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">联系电话</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">账户联系人</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">银行协议号</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="c_title">
+                            <div class="text">账户互转信息</div>
+                        </div>
+                        <div class="c_list c_list-line c_list-border">
+                            <ul>
+                                <li>
+                                    <div class="label">绑定号码</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">用户品牌</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">用户产品</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="label">用户归属地</div>
+                                    <div class="value">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="l_bottom">
+                        <div class="c_submit c_submit-full">
+                            <button type="button" class="e_button-l e_button-navy" ontap="hidePopup(this);">取消</button>
+                            <button type="button" class="e_button-l e_button-blue" ontap="hidePopup(this);$('.forAcct').css('display','');$('#acctCode').val('1')">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="c_popupItem" id="sale">
+                    <div class="c_header">
+                        <div class="back" ontap="hidePopup(this)">选择优惠</div>
+                        <div class="fn" style="padding-right:1em">
+                            <ul>
+                                <li><input type="checkbox"/> <span>立即生效</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="c_scroll c_scroll-float c_scroll-submit c_scroll-header">
+                        <div class="c_list c_list-line">
+                            <ul>
+                                <li id="selectSale">
+                                    <div class="main">
+                                        <div class="title">多媒体电话集团服务</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main">
+                                        <div class="title">集团驻地网宽带服务</div>
+                                    </div>
+                                    <div class="fn">
+                                        <input type="checkbox" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="l_bottom">
+                        <div class="c_submit c_submit-full">
+                            <button type="button" class="e_button-l e_button-navy" ontap="hidePopup(this);">取消</button>
+                            <button type="button" class="e_button-l e_button-blue" ontap="hidePopup(this); show('saleList'); showSaleListLi();">确定</button>
+                            <script>
+                            function showSaleListLi() {
+                                var saleList = get("saleList").children[0].children[0].children[0];
+                                for (var i = 0; i < saleList.children.length; i++) {
+                                    saleList.children[i].style.display = "";
+                                }
+                                $('#saleTag').removeClass('e_hide');
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+Wade.setRatio();
+window["popup"] = new Wade.Popup("popup");
+$.Select.append(
+    "offerTypeWrapper",
+    {
+        id: "prdType",
+        name: "prdType",
+        value: "1"
+    },
+    [{
+        TEXT: "融合业务",
+        VALUE: "1"
+    }]
+);
+$.Select.append(
+    "offerWrapper",
+    {
+        id: "prdCode",
+        name: "prdCode",
+        value: ""
+    },
+    [{
+        TEXT: "集团驻地网宽带",
+        VALUE: "4"
+    }, {
+        TEXT: "小微宽带",
+        VALUE: "5"
+    }, {
+        TEXT: "聚类市场（集客驻地网）",
+        VALUE: "1"
+    }, {
+        TEXT: "和TV",
+        VALUE: "9"
+    }]
+);
+$('#prdCode').bind('change', function(){
+    var val = $('#prdCode').val();
+    if (!!val){
+        $('.forProd').css('display','');
+    }else{
+        $('.forProd').css('display','none');
+    }
+})
+$.Select.append(
+    "vpnCodeLi",
+    {
+        id: "vpnCode",
+        name: "vpnCode",
+        value: "1"
+    },
+    [{
+        TEXT: "2209616357",
+        VALUE: "1"
+    }]
+);
+$.Select.append(
+    "acctCodeLi",
+    {
+        id: "acctCode",
+        name: "acctCode"
+    },
+    [{
+        TEXT: "12342209616357",
+        VALUE: "1"
+    }]
+);
+$('#acctCode').bind('change', function(){
+    var val = $('#acctCode').val();
+    if (!!val){
+        $('.forAcct').css('display','');
+    }else{
+        $('.forAcct').css('display','none');
+    }
+})
+$.Select.append(
+    "contractCodeLi",
+    {
+        id: "contractCode",
+        name: "contractCode"
+    },
+    [{
+        TEXT: "企业宽带业务受理合同",
+        VALUE: "1"
+    }]
+);
+$('#contractCode').bind('change', function(){
+    var val = $('#contractCode').val();
+    if (!!val){
+        $('.forContract').css('display','');
+    }else{
+        $('.forContract').css('display','none');
+    }
+})
+</script>
+</body>
+
+</html>
